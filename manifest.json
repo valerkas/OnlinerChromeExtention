@@ -1,0 +1,34 @@
+﻿{
+    "manifest_version": 2,
+
+    "name": "Onliner $",
+    "version": "0.2",
+    "description": "Перевод цены из рублей в доллары в автобарахолке.",
+
+    "icons": {
+        "128": "128x128.gif"
+    },
+
+    "permissions": [
+        "activeTab"
+    ],
+
+    "browser_action": {
+        "default_title": "Add price in USD",
+        "default_icon": "o1on.gif",
+        "default_popup": "popup.html"
+    },
+
+
+    "background": {
+        "page": "background.html"
+    },
+
+    "content_scripts": [
+        {
+            "matches": [ "http://*.onliner.by/*" ],
+            "js": [ "myscript.js" ],
+            "run_at": "document_end"
+        }
+    ]
+}
